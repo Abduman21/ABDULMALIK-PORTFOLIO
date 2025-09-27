@@ -1,55 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 import Logo1 from "../assets/logo1.png";
 export const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="header-container">
       <div className="logo">
-        <a href="./home" >
-            <img src={Logo1} alt="Todo Logo" />
-            </a>
+        <a href="#home">
+          <img src={Logo1} alt="Todo Logo" />
+        </a>
       </div>
 
-      <nav className="nav-container">
+      <button
+        className="menu-toggle"
+        aria-label="Toggle navigation menu"
+        onClick={() => setMenuOpen((v) => !v)}
+      >
+        <span className="menu-bar" />
+        <span className="menu-bar" />
+        <span className="menu-bar" />
+      </button>
+
+      <nav className={`nav-container ${menuOpen ? "open" : ""}`}>
         <ul className="nav-list">
           <li className="nav-item">
-            <a href="./" className="nav-link">
+            <a href="#home" className="nav-link">
               Home
             </a>
           </li>
 
           <li className="nav-item">
-            <a href="./about.js" className="nav-link">
+            <a href="#about" className="nav-link">
               About me
             </a>
           </li>
 
           <li className="nav-item">
-            <a href="./skills.js" className="nav-link">
+            <a href="#skills" className="nav-link">
               Skills
             </a>
           </li>
 
           <li className="nav-item">
-            <a href="./project.js" className="nav-link">
+            <a href="#projects" className="nav-link">
               Projects
             </a>
           </li>
 
           <li className="nav-item">
-            <a href="./getintouch.js" className="nav-link">
+            <a href="#contact" className="nav-link">
               Contact me
             </a>
           </li>
 
           <li className="nav-item">
-            <a href="./education.js" className="nav-link">
+            <a href="#education" className="nav-link">
               Experiences
             </a>
           </li>
           <li className="nav-item">
-            <a href="./resume.js" >
-              <button  className="resume-button">Resume</button>
+            <a href="https://drive.google.com/file/d/1CUMLWyARQou61wVLm2q30CzYTPI0GYe-/view?usp=drivesdk">
+              <button className="resume-button">Resume</button>
             </a>
           </li>
         </ul>

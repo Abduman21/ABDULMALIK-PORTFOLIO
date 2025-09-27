@@ -14,14 +14,14 @@ export const Home = () => {
   return (
     <>
       <Header />
-      <Hero />
-      <About />
-      <Skills />
-      <Feature />
-      <Education />
-      <Getintouch />
-      <Testimonial />
-      <Footer />
+      <div id="home"><Hero /></div>
+      <div id="about"><About /></div>
+      <div id="skills"><Skills /></div>
+      <div id="projects"><Feature /></div>
+      <div id="education"><Education /></div>
+      <div id="contact"><Getintouch /></div>
+      <div id="testimonials"><Testimonial /></div>
+      <div id="footer"><Footer /></div>
       
     </>
   );
